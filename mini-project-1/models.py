@@ -52,7 +52,7 @@ class Books(BaseModel):
         return id
     
     # Rating validation
-    @field_validator("rating")
+    @field_validator("rating") 
     @classmethod
     def validate_rating(cls, rating: float) -> float:
         if rating < 0 or rating > 5:
