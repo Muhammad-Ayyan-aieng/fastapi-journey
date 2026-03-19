@@ -180,7 +180,7 @@ async def update_book_web(
                 return RedirectResponse(url=f"/book/{book_id}?success=Book+updated+successfully", status_code=303)
         
         return RedirectResponse(url="/home?error=Book+not+found", status_code=303)
-        
+         
     except ValueError as e:
         error_str = str(e)
         if "Value error, " in error_str:
