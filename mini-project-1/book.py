@@ -215,5 +215,5 @@ async def update_book(book_id: int, updated_book: Books):
         if book:
             db.update(book_id, updated_book)
             return {"message": "Book updated successfully", "details": db.get(book_id)}
-    
+
     raise HTTPException(status_code=404, detail=f"Book with ID {book_id} not found")
