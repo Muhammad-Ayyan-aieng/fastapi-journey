@@ -3,7 +3,6 @@ Using an ODM (Beanie) instead of raw MongoDB queries
 An ODM (Object Document Mapper) allows me to interact with MongoDB using Python classes instead of manually writing queries.
 
 When I initially experimented with raw Motor queries, I had to construct dictionaries manually and handle things like ObjectIds myself. This quickly became error-prone. For example, it was easy to forget required fields or mistype keys, and MongoDB would still accept the data. The problem would only appear later when reading the data, causing runtime errors.
-    
 Switching to Beanie improved this significantly. I could define my schema using Python classes, and validation happens before data is saved. If I try to create an event without a required field like location, it immediately raises an error instead of silently failing.
 
 Beanie also simplifies relationships using things like Link[Event], so I don’t have to manually manage IDs between collections. Overall, it reduced boilerplate and helped catch mistakes early.
